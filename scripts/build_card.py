@@ -193,7 +193,7 @@ def info_lines(s: dict) -> list:
         header(f"{USER}@github"),
         kv("OS", "macOS, Linux, Windows"),
         kv("Uptime", uptime(BIRTHDAY, date.today())),
-        kv("Host", "InBot"),
+        kv("Host", "São Paulo, Brazil"),
         kv("Kernel", "Development Lead"),
         kv("IDE", "VS Code"),
         [],
