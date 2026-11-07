@@ -22,6 +22,6 @@
 .&nbsp;<b>Website</b>:&nbsp;......................&nbsp;<a href="https://www.carvalhocortes.com.br">carvalhocortes.com.br</a><br>
 -&nbsp;<b>GitHub&nbsp;Stats</b>&nbsp;————————————————————————————————————————<br>
 .&nbsp;<b>Repos</b>:&nbsp;.&nbsp;37&nbsp;{Contributed:&nbsp;1}&nbsp;|&nbsp;<b>Stars</b>:&nbsp;............&nbsp;24<br>
-.&nbsp;<b>Commits</b>:&nbsp;.............&nbsp;1,190&nbsp;|&nbsp;<b>Followers</b>:&nbsp;........&nbsp;13<br>
-.&nbsp;<b>Lines&nbsp;of&nbsp;Code</b>:&nbsp;...&nbsp;963,426&nbsp;(&nbsp;1,225,494++,&nbsp;262,068--&nbsp;)
+.&nbsp;<b>Commits</b>:&nbsp;.............&nbsp;1,193&nbsp;|&nbsp;<b>Followers</b>:&nbsp;........&nbsp;13<br>
+.&nbsp;<b>Lines&nbsp;of&nbsp;Code</b>:&nbsp;...&nbsp;963,422&nbsp;(&nbsp;1,225,565++,&nbsp;262,143--&nbsp;)
 </samp></p>
