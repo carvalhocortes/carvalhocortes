@@ -31,8 +31,8 @@ jobs:
         run: python scripts/build_card.py
       - name: Commit changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dark_mode.svg light_mode.svg cache/
-          git diff --cached --quiet || git commit -m "chore: update profile card"
+          git config user.name "carvalhocortes"
+          git config user.email "carvalhocortes@gmail.com"
+          git add README.md cache/
+          git diff --cached --quiet || git commit -m "chore: update profile stats"
           git push

@@ -1,10 +1,9 @@
 """Generate ASCII art from assets/photo.webp, ignoring the background.
 
 Usage: python scripts/ascii_art.py [rows]
-Writes assets/ascii_dark.txt (dense = bright) and assets/ascii_light.txt (dense = dark).
+Writes assets/ascii.txt (dense characters = dark areas: hair, beard, eyes).
 Run once locally (needs Pillow + numpy); the daily Action only reads the .txt files.
 """
-import colorsys
 import os
 import sys
 from pathlib import Path
@@ -13,8 +12,8 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
-ROWS = int(sys.argv[1]) if len(sys.argv) > 1 else 32
-CELL_ASPECT = 2.05  # monospace cell height / width at the SVG font size
+ROWS = int(sys.argv[1]) if len(sys.argv) > 1 else 24
+CELL_ASPECT = float(os.environ.get("CELL_ASPECT", 2.4))  # line height / char width in a GitHub <pre>
 CROP = tuple(int(v) for v in os.environ.get("CROP", "450,0,1650,1650").split(","))  # left, top, right, bottom in the 2000x2000 photo
 RAMP = os.environ.get("RAMP", " .,:;i1tfLCG08@")
 
@@ -75,8 +74,7 @@ def main() -> None:
             lines.append(row.rstrip())
         return "\n".join(lines) + "\n"
 
-    (ROOT / "assets/ascii_dark.txt").write_text(render(True))
-    (ROOT / "assets/ascii_light.txt").write_text(render(False))
+    (ROOT / "assets/ascii.txt").write_text(render(os.environ.get("DENSE") == "bright"))
     print(f"{cols}x{ROWS}")
 
 

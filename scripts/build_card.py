@@ -1,4 +1,4 @@
-"""Build dark_mode.svg and light_mode.svg: ASCII portrait + neofetch-style profile card.
+"""Build README.md: ASCII portrait + neofetch-style profile card, all as text.
 
 Stdlib only, so the GitHub Action needs no installs.
 Env: ACCESS_TOKEN (PAT with repo + read:user for private stats; falls back to GITHUB_TOKEN),
@@ -17,7 +17,7 @@ USER = os.environ.get("USER_NAME", "carvalhocortes")
 TOKEN = os.environ.get("ACCESS_TOKEN") or os.environ.get("GITHUB_TOKEN")
 BIRTHDAY = date(1984, 2, 7)
 CACHE = ROOT / "cache/loc.json"
-WIDTH = 62  # characters in the info column
+WIDTH = 58  # characters in the info column
 
 # ---------------------------------------------------------------- GitHub stats
 
@@ -160,22 +160,26 @@ def uptime(born: date, today: date) -> str:
     return f"{plural(y, 'year')}, {plural(m, 'month')}, {plural(d, 'day')}"
 
 
-# A line is a list of (style, text) segments. Styles: t=text k=key v=value d=dots a=add r=del
+# A line is a list of segments (style, text[, href]). Styles: t=text k=key v=value d=dots h=header
 def kv(key: str, value, width: int = WIDTH) -> list:
     """key ....... value, padded to `width`; value may be a str or a list of segments."""
     segs = [("v", value)] if isinstance(value, str) else value
-    dots = width - len(key) - sum(len(t) for _, t in segs) - 5
+    dots = width - len(key) - sum(len(sg[1]) for sg in segs) - 5
     return [("t", ". "), ("k", key), ("t", ":"), ("d", " " + "." * max(dots, 1) + " ")] + segs
 
 
-def kv2(k1: str, v1: str, k2: str, v2: str, split: int = 34) -> list:
+def kv2(k1: str, v1, k2: str, v2, split: int = 31) -> list:
     left = kv(k1, v1, split)
     right = kv(k2, v2, WIDTH - split - 1)[1:]
     return left + [("t", " | ")] + right
 
 
-def header(title: str, lead: str = "") -> list:
-    return [("t", lead), ("v" if not lead else "t", title), ("t", " " + "—" * (WIDTH - len(lead) - len(title) - 1))]
+def header(title: str, lead: str = "", href: str = "") -> list:
+    return [("t", lead), ("h", title, href), ("t", " " + "—" * (WIDTH - len(lead) - len(title) - 1))]
+
+
+def link(text: str, href: str) -> list:
+    return [("v", text, href)]
 
 
 def fmt(n) -> str:
@@ -184,13 +188,12 @@ def fmt(n) -> str:
 
 def info_lines(s: dict) -> list:
     if "add" in s:
-        loc = [("v", fmt(s["add"] - s["del"])), ("t", " ( "), ("a", fmt(s["add"]) + "++"),
-               ("t", ", "), ("r", fmt(s["del"]) + "--"), ("t", " )")]
+        loc = f"{fmt(s['add'] - s['del'])} ( {fmt(s['add'])}++, {fmt(s['del'])}-- )"
     else:
         loc = "-"
-    repos = [("v", fmt(s.get("repos"))), ("t", " {Contributed: "), ("v", fmt(s.get("contributed"))), ("t", "}")]
+    repos = f"{fmt(s.get('repos'))} {{Contributed: {fmt(s.get('contributed'))}}}"
     return [
-        header(f"{USER}@github"),
+        header(f"{USER}@github", href=f"https://github.com/{USER}"),
         kv("OS", "macOS, Linux, Windows"),
         kv("Uptime", uptime(BIRTHDAY, date.today())),
         kv("Host", "São Paulo, Brazil"),
@@ -205,66 +208,50 @@ def info_lines(s: dict) -> list:
         kv("Hobbies.Life", "Bonsai, Family"),
         [],
         header("Contact", "- "),
-        kv("Email.Personal", "carvalhocortes@gmail.com"),
-        kv("LinkedIn", "carvalhocortes"),
-        kv("Website", "carvalhocortes.com.br"),
+        kv("Email.Personal", link("carvalhocortes@gmail.com", "mailto:carvalhocortes@gmail.com")),
+        kv("LinkedIn", link("carvalhocortes", "https://www.linkedin.com/in/carvalhocortes/")),
+        kv("Website", link("carvalhocortes.com.br", "https://www.carvalhocortes.com.br")),
         [],
         header("GitHub Stats", "- "),
         kv2("Repos", repos, "Stars", fmt(s.get("stars"))),
         kv2("Commits", fmt(s.get("commits")), "Followers", fmt(s.get("followers"))),
-        kv("Lines of Code on GitHub", loc),
+        kv("Lines of Code", loc),
     ]
 
 
-# ---------------------------------------------------------------- SVG
-
-THEMES = {
-    "dark": dict(bg="#161b22", border="#30363d", t="#c9d1d9", k="#ffa657", v="#a5d6ff",
-                 d="#616e7f", a="#3fb950", r="#f85149", art="#c9d1d9"),
-    "light": dict(bg="#f6f8fa", border="#d0d7de", t="#24292f", k="#953800", v="#0a3069",
-                  d="#c2cfde", a="#1a7f37", r="#cf222e", art="#24292f"),
-}
-FONT, CHAR_W, LINE_H, PAD = 16, 9.65, 20, 24
-ART_FONT, ART_CHAR_W, ART_LINE_H = 12, 7.24, 15  # smaller font = more detail in the portrait
+# ---------------------------------------------------------------- README
 
 
-def svg(theme: str, art: list[str], lines: list) -> str:
-    c = THEMES[theme]
+def render_segment(seg) -> str:
+    style, text, href = (*seg, "")[:3]
+    html = escape(text, quote=False)
+    if href:
+        html = f'<a href="{escape(href)}">{html}</a>'
+    return f"<b>{html}</b>" if style in ("k", "h") else html
+
+
+def readme(art: list[str], lines: list) -> str:
     art_w = max(len(a) for a in art)
-    info_x = PAD + art_w * ART_CHAR_W + 2 * CHAR_W
-    body_h = max(len(art) * ART_LINE_H, len(lines) * LINE_H)
-    width = round(info_x + (WIDTH + 1) * CHAR_W + PAD)
-    height = round(PAD * 2 + body_h)
-    art_top = PAD + (body_h - len(art) * ART_LINE_H) / 2
-    info_top = PAD + (body_h - len(lines) * LINE_H) / 2
-    out = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,\'SF Mono\',Menlo,\'Courier New\',monospace" '
-        f'width="{width}px" height="{height}px" font-size="{FONT}px">',
-        "<style>",
-        f".t{{fill:{c['t']}}} .k{{fill:{c['k']}}} .v{{fill:{c['v']}}} .d{{fill:{c['d']}}} "
-        f".a{{fill:{c['a']}}} .r{{fill:{c['r']}}} text,tspan{{white-space:pre}}",
-        "</style>",
-        f'<rect width="{width}px" height="{height}px" fill="{c["bg"]}" rx="15" stroke="{c["border"]}"/>',
-        f'<text x="{PAD}" y="{PAD}" fill="{c["art"]}" font-size="{ART_FONT}px">',
-    ]
-    for i, row in enumerate(art):
-        out.append(f'<tspan x="{PAD}" y="{art_top + (i + 1) * ART_LINE_H - 4:.0f}">{escape(row)}</tspan>')
-    out.append("</text>")
-    out.append(f'<text x="{info_x:.0f}" y="{PAD}">')
-    for i, segs in enumerate(lines):
-        y = round(info_top + (i + 1) * LINE_H - 5)
-        body = "".join(f'<tspan class="{s}">{escape(txt)}</tspan>' for s, txt in segs if txt)
-        out.append(f'<tspan x="{info_x:.0f}" y="{y}">{body}</tspan>')
-    out.append("</text>\n</svg>\n")
-    return "\n".join(out)
+    rows = max(len(art), len(lines))
+    art = [""] * ((rows - len(art)) // 2) + art
+    top = (rows - len(lines)) // 2
+    out = []
+    for i in range(rows):
+        left = (art[i] if i < len(art) else "").ljust(art_w)
+        j = i - top
+        right = "".join(render_segment(sg) for sg in lines[j]) if 0 <= j < len(lines) else ""
+        out.append((escape(left, quote=False) + "   " + right).rstrip())
+    return (
+        "<!-- Generated by scripts/build_card.py (daily GitHub Action). Edit the script, not this file. -->\n"
+        "<pre>\n" + "\n".join(out) + "\n</pre>\n"
+    )
 
 
 def main() -> None:
     lines = info_lines(github_stats())
-    for theme in THEMES:
-        art = (ROOT / f"assets/ascii_{theme}.txt").read_text().splitlines()
-        (ROOT / f"{theme}_mode.svg").write_text(svg(theme, art, lines))
-    print("built", ", ".join(f"{t}_mode.svg" for t in THEMES))
+    art = (ROOT / "assets/ascii.txt").read_text().splitlines()
+    (ROOT / "README.md").write_text(readme(art, lines))
+    print("built README.md")
 
 
 if __name__ == "__main__":
