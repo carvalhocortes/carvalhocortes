@@ -21,7 +21,7 @@
        f80GGGCti:..,,;i;;ii1LLG@@@@@G
          8@800Ctf11:.:;,:tfCGG8@@@@0         - <b>GitHub Stats</b> ———————————————————————————————————————————
           8880CLfGG0GCGLG0080C8@@8Gft        . <b>Repos</b>: .. 37 {Contributed: 1} | <b>Stars</b>: .............. 24
-       ;ii;t0G0f0C08@@@@88G0G008L11tfLf..    . <b>Commits</b>: .............. 1,183 | <b>Followers</b>: .......... 13
-    ...i::..,,:itfCG008G0LCCLt1i;ii1ffL...   . <b>Lines of Code</b>: ...... 963,359 ( 1,225,291++, 261,932-- )
+       ;ii;t0G0f0C08@@@@88G0G008L11tfLf..    . <b>Commits</b>: .............. 1,186 | <b>Followers</b>: .......... 13
+    ...i::..,,:itfCG008G0LCCLt1i;ii1ffL...   . <b>Lines of Code</b>: ...... 963,359 ( 1,225,315++, 261,956-- )
 ........;,...........,,,:;i;i;::;;i1tf,...
 </pre>
