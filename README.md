@@ -4,28 +4,28 @@
   <img align="left" width="300" alt="ASCII portrait of Fernando Côrtes" src="assets/art_light.svg">
 </picture>
 
-<pre>
-<b><a href="https://github.com/carvalhocortes">carvalhocortes@github</a></b> —————————————————————————————————
-. <b>OS</b>: ........................... macOS, Linux, Windows
-. <b>Uptime</b>: .................. 42 years, 9 months, 0 days
-. <b>Host</b>: ............................. São Paulo, Brazil
-. <b>Kernel</b>: ............................ Development Lead
-. <b>IDE</b>: ........................................ VS Code
-
-. <b>Languages.Code</b>: .. JavaScript, TypeScript, Python, C#
-. <b>Languages.Computer</b>: ...... HTML, CSS, JSON, YAML, SQL
-. <b>Languages.Real</b>: ................. Portuguese, English
-
-. <b>Hobbies.Hardware</b>: .................. Electronics, DIY
-. <b>Hobbies.Life</b>: ........................ Bonsai, Family
-
-- <b>Contact</b> —————————————————————————————————————————————
-. <b>Email.Personal</b>: ............ <a href="mailto:carvalhocortes@gmail.com">carvalhocortes@gmail.com</a>
-. <b>LinkedIn</b>: ............................ <a href="https://www.linkedin.com/in/carvalhocortes/">carvalhocortes</a>
-. <b>Website</b>: ...................... <a href="https://www.carvalhocortes.com.br">carvalhocortes.com.br</a>
-
-- <b>GitHub Stats</b> ————————————————————————————————————————
-. <b>Repos</b>: . 37 {Contributed: 1} | <b>Stars</b>: ............ 24
-. <b>Commits</b>: ............. 1,187 | <b>Followers</b>: ........ 13
-. <b>Lines of Code</b>: ... 963,359 ( 1,225,321++, 261,962-- )
-</pre>
+<p><samp>
+<b><a href="https://github.com/carvalhocortes">carvalhocortes@github</a></b>&nbsp;—————————————————————————————————<br>
+.&nbsp;<b>OS</b>:&nbsp;...........................&nbsp;macOS,&nbsp;Linux,&nbsp;Windows<br>
+.&nbsp;<b>Uptime</b>:&nbsp;..................&nbsp;42&nbsp;years,&nbsp;9&nbsp;months,&nbsp;0&nbsp;days<br>
+.&nbsp;<b>Host</b>:&nbsp;.............................&nbsp;São&nbsp;Paulo,&nbsp;Brazil<br>
+.&nbsp;<b>Kernel</b>:&nbsp;............................&nbsp;Development&nbsp;Lead<br>
+.&nbsp;<b>IDE</b>:&nbsp;........................................&nbsp;VS&nbsp;Code<br>
+&nbsp;<br>
+.&nbsp;<b>Languages.Code</b>:&nbsp;..&nbsp;JavaScript,&nbsp;TypeScript,&nbsp;Python,&nbsp;C#<br>
+.&nbsp;<b>Languages.Computer</b>:&nbsp;......&nbsp;HTML,&nbsp;CSS,&nbsp;JSON,&nbsp;YAML,&nbsp;SQL<br>
+.&nbsp;<b>Languages.Real</b>:&nbsp;.................&nbsp;Portuguese,&nbsp;English<br>
+&nbsp;<br>
+.&nbsp;<b>Hobbies.Hardware</b>:&nbsp;..................&nbsp;Electronics,&nbsp;DIY<br>
+.&nbsp;<b>Hobbies.Life</b>:&nbsp;........................&nbsp;Bonsai,&nbsp;Family<br>
+&nbsp;<br>
+-&nbsp;<b>Contact</b>&nbsp;—————————————————————————————————————————————<br>
+.&nbsp;<b>Email.Personal</b>:&nbsp;............&nbsp;<a href="mailto:carvalhocortes@gmail.com">carvalhocortes@gmail.com</a><br>
+.&nbsp;<b>LinkedIn</b>:&nbsp;............................&nbsp;<a href="https://www.linkedin.com/in/carvalhocortes/">carvalhocortes</a><br>
+.&nbsp;<b>Website</b>:&nbsp;......................&nbsp;<a href="https://www.carvalhocortes.com.br">carvalhocortes.com.br</a><br>
+&nbsp;<br>
+-&nbsp;<b>GitHub&nbsp;Stats</b>&nbsp;————————————————————————————————————————<br>
+.&nbsp;<b>Repos</b>:&nbsp;.&nbsp;37&nbsp;{Contributed:&nbsp;1}&nbsp;|&nbsp;<b>Stars</b>:&nbsp;............&nbsp;24<br>
+.&nbsp;<b>Commits</b>:&nbsp;.............&nbsp;1,190&nbsp;|&nbsp;<b>Followers</b>:&nbsp;........&nbsp;13<br>
+.&nbsp;<b>Lines&nbsp;of&nbsp;Code</b>:&nbsp;...&nbsp;963,426&nbsp;(&nbsp;1,225,494++,&nbsp;262,068--&nbsp;)
+</samp></p>
