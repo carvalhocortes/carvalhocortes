@@ -1,6 +1,6 @@
 ## About me
 
-I'm Fernando, born in the countryside of Minas Gerais, Brazil. In 2003 I moved to São Paulo to study Electrical Engineering at Mackenzie, where I graduated in 2008.
+I'm Fernando, born in the countryside of Minas Gerais, Brazil. In 2003 I moved to São Paulo to study Electrical Engineering at Mackenzie, majoring in Electronic Engineering, and graduated in 2008.
 
 I spent almost ten years in telecom, managing distributed teams, coordinating projects and working closely with internal and external clients. In 2022 I moved my career to software development, and that's where I found what I really like to do. Since then I've worked as a developer at Ewally, Hospital Israelita Albert Einstein and XP, and today I lead a development team.
 
