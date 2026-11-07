@@ -14,7 +14,7 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
-ROWS = int(sys.argv[1]) if len(sys.argv) > 1 else 32
+ROWS = int(sys.argv[1]) if len(sys.argv) > 1 else 42
 FONT, CHAR_W, LINE_H, PAD = 12, 7.24, 15, 4  # SVG text metrics (monospace)
 CELL_ASPECT = LINE_H / CHAR_W
 COLORS = {"dark": "#c9d1d9", "light": "#1f2328"}  # GitHub foreground colours
