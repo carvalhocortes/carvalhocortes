@@ -14,14 +14,41 @@
 .&nbsp;<b>Languages.Code</b>:&nbsp;..&nbsp;JavaScript,&nbsp;TypeScript,&nbsp;Python,&nbsp;C#<br>
 .&nbsp;<b>Languages.Computer</b>:&nbsp;......&nbsp;HTML,&nbsp;CSS,&nbsp;JSON,&nbsp;YAML,&nbsp;SQL<br>
 .&nbsp;<b>Languages.Real</b>:&nbsp;.................&nbsp;Portuguese,&nbsp;English<br>
-.&nbsp;<b>Hobbies.Hardware</b>:&nbsp;..................&nbsp;Electronics,&nbsp;DIY<br>
-.&nbsp;<b>Hobbies.Life</b>:&nbsp;........................&nbsp;Bonsai,&nbsp;Family<br>
+.&nbsp;<b>Hobbies.Hardware</b>:&nbsp;..........&nbsp;Electronics,&nbsp;3D&nbsp;Printing<br>
+.&nbsp;<b>Hobbies.Making</b>:&nbsp;....................&nbsp;Woodworking,&nbsp;DIY<br>
+.&nbsp;<b>Hobbies.Life</b>:&nbsp;...........&nbsp;Photography,&nbsp;Bonsai,&nbsp;Family<br>
 -&nbsp;<b>Contact</b>&nbsp;—————————————————————————————————————————————<br>
 .&nbsp;<b>Email.Personal</b>:&nbsp;............&nbsp;<a href="mailto:carvalhocortes@gmail.com">carvalhocortes@gmail.com</a><br>
 .&nbsp;<b>LinkedIn</b>:&nbsp;............................&nbsp;<a href="https://www.linkedin.com/in/carvalhocortes/">carvalhocortes</a><br>
 .&nbsp;<b>Website</b>:&nbsp;......................&nbsp;<a href="https://www.carvalhocortes.com.br">carvalhocortes.com.br</a><br>
 -&nbsp;<b>GitHub&nbsp;Stats</b>&nbsp;————————————————————————————————————————<br>
 .&nbsp;<b>Repos</b>:&nbsp;.&nbsp;37&nbsp;{Contributed:&nbsp;1}&nbsp;|&nbsp;<b>Stars</b>:&nbsp;............&nbsp;24<br>
-.&nbsp;<b>Commits</b>:&nbsp;.............&nbsp;1,195&nbsp;|&nbsp;<b>Followers</b>:&nbsp;........&nbsp;13<br>
-.&nbsp;<b>Lines&nbsp;of&nbsp;Code</b>:&nbsp;...&nbsp;963,442&nbsp;(&nbsp;1,225,658++,&nbsp;262,216--&nbsp;)
+.&nbsp;<b>Commits</b>:&nbsp;.............&nbsp;1,198&nbsp;|&nbsp;<b>Followers</b>:&nbsp;........&nbsp;13<br>
+.&nbsp;<b>Lines&nbsp;of&nbsp;Code</b>:&nbsp;...&nbsp;963,209&nbsp;(&nbsp;1,225,749++,&nbsp;262,540--&nbsp;)
 </samp></p>
+<br clear="left">
+
+## About me
+
+I'm Fernando, born in the countryside of Minas Gerais, Brazil. In 2003 I moved to São Paulo to study Electrical Engineering at Mackenzie, where I graduated in 2008.
+
+I spent almost ten years in telecom, managing distributed teams, coordinating projects and working closely with internal and external clients. In 2022 I moved my career to software development, and that's where I found what I really like to do. Since then I've worked as a developer at Ewally, Hospital Israelita Albert Einstein and XP, and today I lead a development team.
+
+I hold a postgraduate degree in Software Systems Architecture from FIAP, a specialization in Clinical Engineering from Albert Einstein and an MBA in Project Management from FGV.
+
+**Stack:** Node.js, TypeScript, .NET, React, AWS, Azure, SQL and NoSQL databases, caching, Datadog, Dynatrace and Git. I care about good engineering practices like SOLID, DRY, KISS, CQRS and Clean Code.
+
+## Away from the keyboard
+
+- **Woodworking:** I picked it up from my grandfather and from Taboca, a carpenter friend of my father. I've built a bench from reclaimed door frames, a key and bag holder and a two-person desk where my wife and I work facing each other.
+- **DIY and 3D printing:** engineering taught me I can build almost anything. Tables, knives, lamps, 3D printed sculptures, bots and photo filters.
+- **Photography:** I travel a lot and photograph to keep the memories of the places I visit.
+- **Bonsai** and time with my family.
+
+## Volunteering
+
+- **[DeMolay](https://www.demolay.org.br/)**, since I was 13: food and clothing drives, charity dinners and food baskets for families in need.
+- **[Fundação Telefônica Vivo](https://www.fundacaotelefonicavivo.org.br/)**, 2008 to 2010: Volunteers Day, renovating schools and running activities with the kids.
+- **[Minha Cena](https://www.instagram.com/projetominhacena/)**: back-end developer on a platform that turns essays from public school students into illustrations made by volunteer artists.
+
+More at [carvalhocortes.com.br](https://www.carvalhocortes.com.br).
