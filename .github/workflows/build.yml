@@ -1,0 +1,38 @@
+name: Build profile card
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily, 03:00 BRT
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [scripts/build_card.py, assets/**, .github/workflows/build.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-card
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build SVGs
+        env:
+          # ACCESS_TOKEN (classic PAT: repo + read:user) adds private repos; falls back to the default token
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+          USER_NAME: ${{ github.repository_owner }}
+        run: python scripts/build_card.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dark_mode.svg light_mode.svg cache/
+          git diff --cached --quiet || git commit -m "chore: update profile card"
+          git push
