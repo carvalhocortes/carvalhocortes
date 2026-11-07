@@ -1,10 +1,12 @@
 """Generate ASCII art from assets/photo.webp, ignoring the background.
 
 Usage: python scripts/ascii_art.py [rows]
-Writes assets/ascii.txt (dense characters = dark areas: hair, beard, eyes).
-Run once locally (needs Pillow + numpy); the daily Action only reads the .txt files.
+Writes assets/art_dark.svg (dense = bright, for GitHub dark theme) and
+assets/art_light.svg (dense = dark). The art is static: run this once locally
+(needs Pillow + numpy) only when the photo changes; the daily Action does not touch it.
 """
 import os
+from html import escape
 import sys
 from pathlib import Path
 
@@ -12,8 +14,10 @@ import numpy as np
 from PIL import Image, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
-ROWS = int(sys.argv[1]) if len(sys.argv) > 1 else 24
-CELL_ASPECT = float(os.environ.get("CELL_ASPECT", 2.4))  # line height / char width in a GitHub <pre>
+ROWS = int(sys.argv[1]) if len(sys.argv) > 1 else 32
+FONT, CHAR_W, LINE_H, PAD = 12, 7.24, 15, 4  # SVG text metrics (monospace)
+CELL_ASPECT = LINE_H / CHAR_W
+COLORS = {"dark": "#c9d1d9", "light": "#1f2328"}  # GitHub foreground colours
 CROP = tuple(int(v) for v in os.environ.get("CROP", "450,0,1650,1650").split(","))  # left, top, right, bottom in the 2000x2000 photo
 RAMP = os.environ.get("RAMP", " .,:;i1tfLCG08@")
 
@@ -74,7 +78,21 @@ def main() -> None:
             lines.append(row.rstrip())
         return "\n".join(lines) + "\n"
 
-    (ROOT / "assets/ascii.txt").write_text(render(os.environ.get("DENSE") == "bright"))
+    for theme, color in COLORS.items():
+        rows = render(theme == "dark").splitlines()
+        width = round(cols * CHAR_W + 2 * PAD)
+        height = ROWS * LINE_H + 2 * PAD
+        out = [
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
+            f'font-family="ui-monospace,SFMono-Regular,\'SF Mono\',Menlo,Consolas,\'Liberation Mono\',monospace" '
+            f'font-size="{FONT}px" fill="{color}">',
+            "<style>text{white-space:pre}</style>",
+            "<text>",
+        ]
+        for i, row in enumerate(rows):
+            out.append(f'<tspan x="{PAD}" y="{PAD + (i + 1) * LINE_H - 3}">{escape(row, quote=False)}</tspan>')
+        out.append("</text>\n</svg>\n")
+        (ROOT / f"assets/art_{theme}.svg").write_text("\n".join(out))
     print(f"{cols}x{ROWS}")
 
 
