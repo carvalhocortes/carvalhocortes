@@ -23,8 +23,8 @@
 .&nbsp;<b>Website</b>:&nbsp;......................&nbsp;<a href="https://www.carvalhocortes.com.br">carvalhocortes.com.br</a><br>
 -&nbsp;<b>GitHub&nbsp;Stats</b>&nbsp;————————————————————————————————————————<br>
 .&nbsp;<b>Repos</b>:&nbsp;.&nbsp;37&nbsp;{Contributed:&nbsp;1}&nbsp;|&nbsp;<b>Stars</b>:&nbsp;............&nbsp;24<br>
-.&nbsp;<b>Commits</b>:&nbsp;.............&nbsp;1,198&nbsp;|&nbsp;<b>Followers</b>:&nbsp;........&nbsp;13<br>
-.&nbsp;<b>Lines&nbsp;of&nbsp;Code</b>:&nbsp;...&nbsp;963,209&nbsp;(&nbsp;1,225,749++,&nbsp;262,540--&nbsp;)
+.&nbsp;<b>Commits</b>:&nbsp;.............&nbsp;1,200&nbsp;|&nbsp;<b>Followers</b>:&nbsp;........&nbsp;13<br>
+.&nbsp;<b>Lines&nbsp;of&nbsp;Code</b>:&nbsp;...&nbsp;963,264&nbsp;(&nbsp;1,225,826++,&nbsp;262,562--&nbsp;)
 </samp></p>
 <br clear="left">
 
