@@ -7,7 +7,7 @@
 <p><samp>
 <b><a href="https://github.com/carvalhocortes">carvalhocortes@github</a></b>&nbsp;—————————————————————————————————<br>
 .&nbsp;<b>OS</b>:&nbsp;...........................&nbsp;macOS,&nbsp;Linux,&nbsp;Windows<br>
-.&nbsp;<b>Uptime</b>:&nbsp;.................&nbsp;42&nbsp;years,&nbsp;9&nbsp;months,&nbsp;12&nbsp;days<br>
+.&nbsp;<b>Uptime</b>:&nbsp;.................&nbsp;42&nbsp;years,&nbsp;9&nbsp;months,&nbsp;13&nbsp;days<br>
 .&nbsp;<b>Host</b>:&nbsp;.............................&nbsp;São&nbsp;Paulo,&nbsp;Brazil<br>
 .&nbsp;<b>Kernel</b>:&nbsp;............................&nbsp;Development&nbsp;Lead<br>
 .&nbsp;<b>IDE</b>:&nbsp;........................................&nbsp;VS&nbsp;Code<br>
@@ -22,9 +22,9 @@
 .&nbsp;<b>LinkedIn</b>:&nbsp;............................&nbsp;<a href="https://www.linkedin.com/in/carvalhocortes/">carvalhocortes</a><br>
 .&nbsp;<b>Website</b>:&nbsp;......................&nbsp;<a href="https://www.carvalhocortes.com.br">carvalhocortes.com.br</a><br>
 -&nbsp;<b>GitHub&nbsp;Stats</b>&nbsp;————————————————————————————————————————<br>
-.&nbsp;<b>Repos</b>:&nbsp;.&nbsp;38&nbsp;{Contributed:&nbsp;3}&nbsp;|&nbsp;<b>Stars</b>:&nbsp;............&nbsp;24<br>
-.&nbsp;<b>Commits</b>:&nbsp;.............&nbsp;1,456&nbsp;|&nbsp;<b>Followers</b>:&nbsp;........&nbsp;13<br>
-.&nbsp;<b>Lines&nbsp;of&nbsp;Code</b>:&nbsp;.&nbsp;1,003,392&nbsp;(&nbsp;1,316,615++,&nbsp;313,223--&nbsp;)
+.&nbsp;<b>Repos</b>:&nbsp;.&nbsp;38&nbsp;{Contributed:&nbsp;4}&nbsp;|&nbsp;<b>Stars</b>:&nbsp;............&nbsp;24<br>
+.&nbsp;<b>Commits</b>:&nbsp;.............&nbsp;1,471&nbsp;|&nbsp;<b>Followers</b>:&nbsp;........&nbsp;13<br>
+.&nbsp;<b>Lines&nbsp;of&nbsp;Code</b>:&nbsp;.&nbsp;1,008,020&nbsp;(&nbsp;1,321,665++,&nbsp;313,645--&nbsp;)
 </samp></p>
 <br clear="left">
 
